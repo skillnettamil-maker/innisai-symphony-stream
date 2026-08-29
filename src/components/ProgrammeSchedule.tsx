@@ -13,7 +13,7 @@ export function ProgrammeSchedule({ tabs }: { tabs: ScheduleTab[] }) {
       <div
         role="tablist"
         aria-label="நிகழ்ச்சி நிரல்"
-        className="mx-auto flex w-full max-w-md items-center gap-1 rounded-full border border-border bg-card p-1"
+        className="mx-auto flex w-full max-w-lg items-center gap-1 rounded-full border border-border bg-card p-1.5 shadow-[var(--shadow-soft)]"
       >
         {tabs.map((tab) => (
           <button
@@ -21,7 +21,7 @@ export function ProgrammeSchedule({ tabs }: { tabs: ScheduleTab[] }) {
             role="tab"
             aria-selected={tab.id === current?.id}
             onClick={() => setActive(tab.id)}
-            className={`flex-1 rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+            className={`flex-1 rounded-full px-3 py-2.5 text-sm font-bold transition-colors ${
               tab.id === current?.id
                 ? "bg-primary text-primary-foreground"
                 : "text-muted-foreground hover:bg-secondary"
@@ -32,7 +32,7 @@ export function ProgrammeSchedule({ tabs }: { tabs: ScheduleTab[] }) {
         ))}
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {current?.programmes.map((p) => (
           <ProgrammeCard key={`${p.time}-${p.name}`} programme={p} />
         ))}
