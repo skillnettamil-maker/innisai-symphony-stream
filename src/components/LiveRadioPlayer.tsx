@@ -33,7 +33,10 @@ export function LiveRadioPlayer() {
   };
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-soft)] sm:p-6">
+    <div
+      className="rounded-2xl p-4 text-primary-foreground shadow-[var(--shadow-card)] sm:p-5"
+      style={{ backgroundImage: "var(--gradient-royal)" }}
+    >
       <audio
         ref={audioRef}
         preload="none"
@@ -41,48 +44,53 @@ export function LiveRadioPlayer() {
         onPlaying={() => setStatus("playing")}
         onError={() => setStatus("error")}
       />
-      <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            onClick={status === "playing" ? pause : play}
-            aria-label={status === "playing" ? "இடைநிறுத்து" : "இசைக்க"}
-            className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            {status === "loading" ? (
-              <Loader2 className="h-7 w-7 animate-spin" />
-            ) : status === "playing" ? (
-              <Pause className="h-7 w-7" />
-            ) : (
-              <Play className="ms-1 h-7 w-7" />
-            )}
-          </button>
-          <div className="text-start">
-            <p className="text-lg font-semibold text-foreground">இன்னிசை வானொலி நேரலை</p>
-            <p className="text-sm text-muted-foreground">
-              {status === "playing"
-                ? "🔴 நேரலை ஒலிபரப்பு"
-                : status === "loading"
-                  ? "இணைக்கப்படுகிறது..."
-                  : status === "error"
-                    ? "ஒலிபரப்பை இணைக்க முடியவில்லை"
-                    : "கேட்க இயக்கவும்"}
-            </p>
+      <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[auto_minmax(0,1fr)_auto]">
+        <button
+          type="button"
+          onClick={status === "playing" ? pause : play}
+          aria-label={status === "playing" ? "இடைநிறுத்து" : "இசைக்க"}
+          className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary-foreground text-primary transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:h-[68px] sm:w-[68px]"
+        >
+          {status === "loading" ? (
+            <Loader2 className="h-7 w-7 animate-spin" />
+          ) : status === "playing" ? (
+            <Pause className="h-7 w-7" />
+          ) : (
+            <Play className="ms-1 h-7 w-7" />
+          )}
+        </button>
+
+        <div className="min-w-0 text-start">
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="truncate text-lg font-bold sm:text-xl">இன்னிசை வானொலி நேரலை</p>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-destructive px-2.5 py-0.5 text-[11px] font-bold text-destructive-foreground">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-destructive-foreground" />
+              LIVE
+            </span>
           </div>
+          <p className="mt-1 text-sm text-primary-foreground/80">
+            {status === "playing"
+              ? "நேரலை ஒலிபரப்பு"
+              : status === "loading"
+                ? "இணைக்கப்படுகிறது..."
+                : status === "error"
+                  ? "ஒலிபரப்பை இணைக்க முடியவில்லை"
+                  : "நேரலையை கேட்க இயக்கவும்"}
+          </p>
         </div>
 
-        <div className="flex w-full items-center gap-3 sm:w-auto">
+        <div className="col-span-2 flex w-full items-center gap-3 sm:col-span-1 sm:w-52">
           {status === "error" ? (
             <button
               type="button"
               onClick={play}
-              className="inline-flex items-center gap-2 rounded-full border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-secondary"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-accent px-4 py-2 text-sm font-semibold text-gold transition-colors hover:bg-primary-foreground/10"
             >
               <RotateCcw className="h-4 w-4" /> மீண்டும் முயற்சி
             </button>
           ) : (
-            <div className="flex w-full items-center gap-2 sm:w-44">
-              <Volume2 className="h-5 w-5 shrink-0 text-muted-foreground" />
+            <>
+              <Volume2 className="h-5 w-5 shrink-0 text-primary-foreground/80" />
               <input
                 type="range"
                 min={0}
@@ -91,9 +99,9 @@ export function LiveRadioPlayer() {
                 value={volume}
                 aria-label="ஒலி அளவு"
                 onChange={(e) => setVolume(Number(e.target.value))}
-                className="h-1 w-full cursor-pointer appearance-none rounded-full bg-secondary accent-accent"
+                className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-primary-foreground/25 accent-[oklch(0.82_0.13_88)]"
               />
-            </div>
+            </>
           )}
         </div>
       </div>

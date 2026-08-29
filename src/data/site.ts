@@ -2,6 +2,20 @@ export const STREAM_URL = "https://innisaifm-prabak78.radioca.st/stream";
 export const WHATSAPP_NUMBER = "+94 765 745 932";
 export const WHATSAPP_LINK = "https://wa.me/94765745932";
 
+export type NavLink = { href: string; label: string };
+
+export const NAV_LINKS: NavLink[] = [
+  { href: "#home", label: "முகப்பு" },
+  { href: "#about", label: "அறிமுகம்" },
+  { href: "#mission", label: "எமது நோக்கம்" },
+  { href: "#schedule", label: "நிகழ்ச்சி நிரல்" },
+  { href: "#rjs", label: "RJs & நிகழ்வுகள்" },
+  { href: "#gallery", label: "படத்தொகுப்பு" },
+  { href: "#team", label: "இயக்குனர்" },
+  { href: "#contact", label: "தொடர்புக்கு" },
+];
+
+
 export const SOCIAL_LINKS = [
   { label: "Facebook", url: "https://www.facebook.com/share/1HnJ7FH18d/" },
   {
