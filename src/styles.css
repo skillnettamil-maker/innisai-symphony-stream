@@ -60,8 +60,12 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-gold: var(--accent);
+  --color-gold-soft: var(--gold-soft);
+  --color-primary-deep: var(--primary-deep);
+  --color-lilac: var(--lilac);
   --font-sans: "Noto Sans Tamil", ui-sans-serif, system-ui, sans-serif;
 }
+
 
 :root {
   --radius: 0.75rem;
