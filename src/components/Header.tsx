@@ -7,18 +7,18 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-card/95 shadow-[0_2px_16px_-12px_oklch(0.32_0.14_303)] backdrop-blur">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
-        <a href="#home" className="flex min-w-0 items-center gap-3">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
+        <a href="#home" className="flex shrink-0 items-center gap-3">
           <img
             src={LOGO}
             alt="இன்னிசை வானொலி அதிகாரப்பூர்வ சின்னம்"
             className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-accent"
           />
-          <span className="min-w-0 leading-tight">
-            <span className="block truncate text-base font-extrabold text-primary sm:text-lg">
+          <span className="leading-tight">
+            <span className="block whitespace-nowrap text-base font-extrabold text-primary sm:text-lg">
               இன்னிசை வானொலி
             </span>
-            <span className="block truncate text-xs text-muted-foreground">இசையின் சங்கமம்</span>
+            <span className="block whitespace-nowrap text-xs text-muted-foreground">இசையின் சங்கமம்</span>
           </span>
         </a>
 
@@ -27,7 +27,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-secondary hover:text-primary"
+              className="whitespace-nowrap rounded-full px-2.5 py-2 text-[13px] font-semibold text-foreground transition-colors hover:bg-secondary hover:text-primary 2xl:px-3 2xl:text-sm"
             >
               {item.label}
             </a>
@@ -45,7 +45,7 @@ export function Header() {
             <MessageCircle className="h-5 w-5 shrink-0 text-gold" />
             <span className="leading-tight">
               <span className="block text-[11px] opacity-80">WhatsApp</span>
-              <span className="block text-sm font-bold">{WHATSAPP_NUMBER}</span>
+              <span className="block whitespace-nowrap text-sm font-bold">{WHATSAPP_NUMBER}</span>
             </span>
           </a>
 

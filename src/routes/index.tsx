@@ -32,6 +32,8 @@ import {
   WEEKEND_SCHEDULE,
   WHATSAPP_NUMBER,
 } from "@/data/site";
+import type { Programme } from "@/data/site";
+
 
 const TITLE = "இன்னிசை வானொலி – இசையின் சங்கமம்";
 const DESCRIPTION =
@@ -53,13 +55,14 @@ export const Route = createFileRoute("/")({
 
 const FEATURE_ICONS = [Users, Mic, Globe, Headphones, Heart];
 
-const RJ_HIGHLIGHTS = [
+const RJ_HIGHLIGHTS: Programme[] = [
   WEEKDAY_SCHEDULE[6],
   WEEKEND_SCHEDULE[0],
   WEEKEND_SCHEDULE[4],
   WEEKDAY_SCHEDULE[7],
   WEEKDAY_SCHEDULE[3],
-].filter(Boolean);
+].filter((p): p is Programme => Boolean(p));
+
 
 function Section({
   id,
