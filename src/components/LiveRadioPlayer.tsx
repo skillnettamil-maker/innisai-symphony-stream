@@ -62,7 +62,7 @@ export function LiveRadioPlayer() {
 
         <div className="min-w-0 text-start">
           <div className="flex flex-wrap items-center gap-2">
-            <p className="truncate text-lg font-bold sm:text-xl">இன்னிசை வானொலி நேரலை</p>
+            <p className="text-lg font-bold sm:text-xl">இன்னிசை வானொலி நேரலை</p>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-destructive px-2.5 py-0.5 text-[11px] font-bold text-destructive-foreground">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-destructive-foreground" />
               LIVE

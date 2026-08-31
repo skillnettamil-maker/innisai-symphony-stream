@@ -7,7 +7,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-card/95 shadow-[0_2px_16px_-12px_oklch(0.32_0.14_303)] backdrop-blur">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
         <a href="#home" className="flex min-w-0 items-center gap-3">
           <img
             src={LOGO}
