@@ -22,10 +22,10 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { SocialLinks } from "@/components/SocialLinks";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import heroRadioAtmosphere from "@/assets/hero-radio-atmosphere.jpg";
+import { useDynamicGallery } from "@/hooks/use-dynamic-gallery";
 import {
   ABOUT_PARAGRAPHS,
   DIRECTOR,
-  GALLERY_SETS,
   LOGO,
   MISSION,
   SPONSORS,
@@ -82,6 +82,8 @@ function Section({
 }
 
 function Index() {
+  const gallerySets = useDynamicGallery();
+
   return (
     <div className="min-h-screen bg-background font-sans">
       <Header />
@@ -199,7 +201,7 @@ function Index() {
         <Section id="gallery">
           <SectionTitle title="படத்தொகுப்பு" subtitle="நிகழ்ச்சி மற்றும் RJ அறிமுகங்கள்" />
           <div className="mt-10 space-y-6">
-            {GALLERY_SETS.map((set) => (
+            {gallerySets.map((set) => (
               <GallerySlider key={set.id} title={set.title} images={set.images} maxPerView={3} />
             ))}
           </div>
