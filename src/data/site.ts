@@ -96,22 +96,26 @@ const img = (n: number) => `/images/img${String(n).padStart(2, "0")}.jpg`;
 
 export const LOGO = img(1);
 
-export type GallerySet = { id: string; title: string; images: string[] };
+/** `folder` maps to a folder under /gallery/ scanned by the PHP endpoint at runtime. */
+export type GallerySet = { id: string; title: string; images: string[]; folder?: string };
 
 export const GALLERY_SETS: GallerySet[] = [
   {
     id: "slider-01",
     title: "எங்கள் RJ நட்சத்திரங்கள்",
+    folder: "rj-stars",
     images: [1, 2, 4, 5, 7, 8, 9, 12, 14, 16, 17, 18, 20, 21, 23, 24, 25, 27, 30, 31, 32].map(img),
   },
   {
     id: "slider-02",
     title: "எங்களின் நட்சத்திரக் குரல்கள்",
+    folder: "rj-voices",
     images: [6, 11, 13, 22, 28, 29, 33, 35].map(img),
   },
   {
     id: "slider-03",
     title: "RJ நட்சத்திரங்கள்",
+    folder: "rj-special",
     images: [3, 15, 19, 34].map(img),
   },
   {
