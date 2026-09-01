@@ -22,10 +22,10 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { SocialLinks } from "@/components/SocialLinks";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import heroRadioAtmosphere from "@/assets/hero-radio-atmosphere.jpg";
+import { useDynamicGallery } from "@/hooks/use-dynamic-gallery";
 import {
   ABOUT_PARAGRAPHS,
   DIRECTOR,
-  GALLERY_SETS,
   LOGO,
   MISSION,
   SPONSORS,
@@ -82,6 +82,8 @@ function Section({
 }
 
 function Index() {
+  const gallerySets = useDynamicGallery();
+
   return (
     <div className="min-h-screen bg-background font-sans">
       <Header />
