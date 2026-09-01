@@ -199,7 +199,7 @@ function Index() {
         <Section id="gallery">
           <SectionTitle title="படத்தொகுப்பு" subtitle="நிகழ்ச்சி மற்றும் RJ அறிமுகங்கள்" />
           <div className="mt-10 space-y-6">
-            {GALLERY_SETS.map((set) => (
+            {gallerySets.map((set) => (
               <GallerySlider key={set.id} title={set.title} images={set.images} maxPerView={3} />
             ))}
           </div>
