@@ -21,6 +21,7 @@ import { GallerySlider } from "@/components/GallerySlider";
 import { SectionTitle } from "@/components/SectionTitle";
 import { SocialLinks } from "@/components/SocialLinks";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import heroRadioAtmosphere from "@/assets/hero-radio-atmosphere.jpg";
 import {
   ABOUT_PARAGRAPHS,
   DIRECTOR,
@@ -89,10 +90,18 @@ function Index() {
         {/* Hero */}
         <section
           id="home"
-          className="relative overflow-hidden border-b border-border"
-          style={{ backgroundImage: "var(--gradient-hero)" }}
+          className="relative overflow-hidden border-b border-border bg-lilac"
         >
-          <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <img
+            src={heroRadioAtmosphere}
+            alt=""
+            aria-hidden="true"
+            width={1920}
+            height={900}
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[72%_center] opacity-55 sm:object-[68%_center] sm:opacity-65 lg:object-center lg:opacity-90"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,color-mix(in_oklab,var(--background)_88%,transparent)_42%,color-mix(in_oklab,var(--background)_18%,transparent)_72%,transparent_100%)] lg:bg-[linear-gradient(90deg,var(--background)_0%,color-mix(in_oklab,var(--background)_78%,transparent)_36%,transparent_68%)]" />
+          <div className="relative z-10 mx-auto grid max-w-[1400px] items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
             <div className="text-center lg:text-start">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-card px-4 py-1.5 text-xs font-semibold text-accent-foreground">
                 <Radio className="h-3.5 w-3.5" /> இணையவழி தமிழ் வானொலி
@@ -123,7 +132,7 @@ function Index() {
           </div>
 
           {/* Feature strip */}
-          <div className="mx-auto max-w-[1400px] px-4 pb-10 sm:px-6 lg:px-8">
+          <div className="relative z-10 mx-auto max-w-[1400px] px-4 pb-10 sm:px-6 lg:px-8">
             <ul
               className="grid gap-1 rounded-2xl p-3 shadow-[var(--shadow-card)] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
               style={{ backgroundImage: "var(--gradient-royal)" }}
